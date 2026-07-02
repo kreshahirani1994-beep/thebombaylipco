@@ -125,19 +125,11 @@ width:100%;
 /* HERO */
 
 .hero{
-
-min-height:100vh;
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-align-items:center;
-
-gap:90px;
-
-padding:160px 8% 90px;
-
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding-top:120px;
 }
 
 /* HERO TEXT */
@@ -801,11 +793,13 @@ grid-template-columns:repeat(2,1fr);
 
 header{
 
-padding:15px 20px;
+padding:12px 20px;
 
-flex-direction:column;
+flex-direction:row;
 
-gap:15px;
+justify-content:space-between;
+
+align-items:center;
 
 }
 
@@ -817,23 +811,15 @@ height:46px;
 
 nav{
 
-gap:18px;
+gap:10px;
 
-flex-wrap:wrap;
-
-justify-content:center;
+justify-content:flex-end;
 
 }
 
-.hero{
+nav a{
 
-padding:150px 25px 70px;
-
-}
-
-.hero h1{
-
-font-size:52px;
+font-size:13px;
 
 }
 
