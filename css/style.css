@@ -1,1 +1,1037 @@
+/*=========================================
+THE BOMBAY LIP CO.
+Luxury Website CSS
+PART 1
+=========================================*/
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root{
+
+--primary:#CC5A82;
+--primary-dark:#B3446B;
+--gold:#D5B06A;
+--black:#232323;
+--grey:#666;
+--light:#FFF8F7;
+--white:#ffffff;
+--border:#F3D8DF;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:linear-gradient(180deg,#FFF8F7,#ffffff);
+color:var(--black);
+overflow-x:hidden;
+line-height:1.8;
+
+}
+
+/* HEADER */
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--border);
+z-index:999;
+
+}
+
+/* LOGO */
+
+.logo{
+
+display:flex;
+align-items:center;
+
+}
+
+.logo img{
+
+height:58px;
+display:block;
+
+}
+
+/* NAVIGATION */
+
+nav{
+
+display:flex;
+gap:38px;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:var(--black);
+font-weight:500;
+position:relative;
+transition:.35s;
+
+}
+
+nav a:hover{
+
+color:var(--primary);
+
+}
+
+nav a::after{
+
+content:"";
+position:absolute;
+left:0;
+bottom:-7px;
+height:2px;
+width:0;
+background:var(--primary);
+transition:.35s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:90px;
+
+padding:160px 8% 90px;
+
+}
+
+/* HERO TEXT */
+
+.hero-text{
+
+animation:fadeUp .8s ease;
+
+}
+
+.small-heading{
+
+font-size:12px;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+font-weight:600;
+
+color:var(--primary);
+
+margin-bottom:18px;
+
+}
+
+.hero h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:78px;
+
+line-height:1.05;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+max-width:540px;
+
+color:var(--grey);
+
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
+
+.btn,
+
+.btn-outline{
+
+height:60px;
+
+padding:0 36px;
+
+border-radius:100px;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:.35s;
+
+}
+
+.btn{
+
+background:var(--primary);
+
+color:white;
+
+box-shadow:0 15px 35px rgba(204,90,130,.22);
+
+}
+
+.btn:hover{
+
+background:var(--primary-dark);
+
+transform:translateY(-4px);
+
+}
+
+.btn-outline{
+
+border:2px solid var(--primary);
+
+color:var(--primary);
+
+background:white;
+
+}
+
+.btn-outline:hover{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+/* HERO IMAGE */
+
+.hero-image{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.hero-image img{
+
+width:430px;
+
+height:560px;
+
+object-fit:cover;
+
+border-radius:30px;
+
+display:block;
+
+box-shadow:0 25px 60px rgba(0,0,0,.16);
+
+transition:.35s;
+
+}
+
+.hero-image img:hover{
+
+transform:translateY(-8px);
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}/*=========================================
+THE BOMBAY LIP CO.
+PART 2
+FEATURE • COLLECTION • ABOUT • CONTACT
+=========================================*/
+
+/* SECTION SPACING */
+
+section{
+
+    padding:110px 8%;
+
+}
+
+/* HEADINGS */
+
+h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:60px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    margin-bottom:65px;
+
+}
+
+/* FEATURE SECTION */
+
+.feature-section{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+.feature-image{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.feature-image img{
+
+    width:430px;
+
+    height:560px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    display:block;
+
+    box-shadow:0 20px 55px rgba(0,0,0,.15);
+
+}
+
+.feature-text h2{
+
+    text-align:left;
+
+    margin-bottom:25px;
+
+}
+
+.feature-text p{
+
+    color:var(--grey);
+
+    font-size:17px;
+
+    margin-bottom:35px;
+
+}
+
+/* COLLECTION */
+
+#collection{
+
+    background:linear-gradient(180deg,#FFF8F8,#FFF3F5);
+
+}
+
+/* CARD GRID */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+/* PRODUCT CARD */
+
+.card{
+
+    background:white;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 55px rgba(204,90,130,.18);
+
+}
+
+/* ==========================
+IMAGE FIX
+THIS FIXES YOUR POSTERS
+========================== */
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:contain;
+    object-position:center;
+    background:#FFFDFB;
+    padding:18px;
+    display:block;
+}
+
+/* TITLE */
+
+.card h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:30px;
+
+    padding:22px 24px 10px;
+
+}
+
+/* DESCRIPTION */
+
+.card p{
+
+    padding:0 24px 28px;
+
+    color:var(--grey);
+
+    font-size:15px;
+
+}
+
+/* ABOUT */
+
+#about{
+
+    text-align:center;
+
+    background:white;
+
+}
+
+#about h2{
+
+    margin-bottom:20px;
+
+}
+
+#about p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:17px;
+
+    color:var(--grey);
+
+}
+
+/* CONTACT */
+
+#contact{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #FFF5F8,
+
+        #FFECEF
+
+    );
+
+    border-radius:30px;
+
+    margin:50px 8%;
+
+    padding:90px;
+
+    text-align:center;
+
+}
+
+.contact-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:50px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.contact-links p{
+
+    font-size:17px;
+
+}
+
+.contact-links strong{
+
+    color:var(--primary);
+
+}
+
+/* IMAGE HOVER */
+
+.card img{
+    width:100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background:#fff;
+    padding:15px;
+    display:block;
+}
+
+.feature-image img{
+
+    transition:.4s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.03);
+
+}
+
+.feature-image img:hover{
+
+    transform:translateY(-8px);
+
+}/*=========================================
+THE BOMBAY LIP CO.
+PART 3
+FOOTER • WHATSAPP • RESPONSIVE • EFFECTS
+=========================================*/
+
+/* FOOTER */
+
+footer{
+
+    background:#2F2328;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+}
+
+/* WHATSAPP */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:70px;
+
+    height:70px;
+
+    z-index:9999;
+
+    transition:.35s;
+
+}
+
+.whatsapp-float img{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50%;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.whatsapp-float:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#FFF6F8;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* TEXT SELECTION */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* SMOOTH TRANSITIONS */
+
+img,
+.card,
+.btn,
+.btn-outline,
+nav a{
+
+    transition:.35s ease;
+
+}
+
+/* CARD SHADOW */
+
+.card:hover{
+
+    box-shadow:0 25px 60px rgba(204,90,130,.18);
+
+}
+
+/* PREMIUM IMAGE EFFECT */
+
+.hero-image img,
+.feature-image img{
+
+    border:1px solid rgba(255,255,255,.5);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+gap:50px;
+
+padding-top:150px;
+
+}
+
+.hero p{
+
+margin:auto;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-image img{
+
+width:100%;
+
+max-width:420px;
+
+height:auto;
+
+}
+
+.feature-section{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+text-align:center;
+
+}
+
+.feature-text h2{
+
+text-align:center;
+
+}
+
+.feature-image img{
+
+width:100%;
+
+max-width:420px;
+
+height:auto;
+
+}
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+
+padding:15px 20px;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.logo img{
+
+height:46px;
+
+}
+
+nav{
+
+gap:18px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+padding:150px 25px 70px;
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.btn,
+
+.btn-outline{
+
+width:260px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.card img{
+    width:100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background:#fff;
+    padding:15px;
+    display:block;
+}
+
+
+section{
+
+padding:80px 25px;
+
+}
+
+#contact{
+
+margin:30px 20px;
+
+padding:60px 25px;
+
+}
+
+.contact-links{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.whatsapp-float{
+
+width:60px;
+
+height:60px;
+
+right:18px;
+
+bottom:18px;
+
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+h2{
+
+font-size:42px;
+
+}
+
+.small-heading{
+
+letter-spacing:3px;
+
+font-size:11px;
+
+}
+
+.hero-image img{
+
+max-width:320px;
+
+}
+
+.feature-image img{
+
+max-width:320px;
+
+}
+
+}
+/* ===========================
+FOUNDER SECTION
+=========================== */
+
+.founder-section{
+
+display:grid;
+
+grid-template-columns:420px 1fr;
+
+gap:80px;
+
+align-items:center;
+
+padding:120px 8%;
+
+background:white;
+
+}
+
+.founder-image{
+
+text-align:center;
+
+}
+
+.founder-image img{
+
+width:100%;
+
+max-width:420px;
+
+border-radius:30px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+display:block;
+
+}
+
+.founder-content h2{
+
+text-align:left;
+
+margin-bottom:25px;
+
+}
+
+.founder-content p{
+
+font-size:17px;
+
+line-height:1.9;
+
+color:#666;
+
+margin-bottom:22px;
+
+}
+
+.founder-content strong{
+
+color:#CC5A82;
+
+}
+
+@media(max-width:900px){
+
+.founder-section{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+gap:50px;
+
+}
+
+.founder-content h2{
+
+text-align:center;
+
+}
+
+}
+
+/* END */
