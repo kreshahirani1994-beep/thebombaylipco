@@ -358,7 +358,21 @@ Looking forward to hearing from you. 😊`);
 
 });
 
+/*=========================================
+BEYOND BEAUTY BUTTON
+=========================================*/
 
+document.querySelector(".beyond-beauty .btn").addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+openWhatsapp(`Hi! 👋
+
+I came across The Bombay Lip Co. and I'm interested in your wedding favours, corporate gifting, live events and bulk order services.
+
+Could you please share more details? ✨`);
+
+});
 /*=========================================================
 CONTACT BUTTONS
 =========================================================*/

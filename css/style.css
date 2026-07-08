@@ -2126,4 +2126,58 @@ border:none;
 
 cursor:pointer;
 
+}/*==================================
+BEYOND BEAUTY
+==================================*/
+
+.beyond-beauty{
+
+background:#fff;
+
+padding:100px 0;
+
+text-align:center;
+
+}
+
+.beyond-beauty h2{
+
+max-width:760px;
+
+margin:15px auto 25px;
+
+}
+
+.beyond-text{
+
+max-width:900px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:2;
+
+color:var(--grey);
+
+}
+
+.beyond-btn{
+
+margin-top:45px;
+
+}
+
+@media(max-width:768px){
+
+.beyond-text{
+
+font-size:17px;
+
+line-height:1.9;
+
+padding:0 10px;
+
+}
+
 }
