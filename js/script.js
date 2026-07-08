@@ -1,197 +1,226 @@
-/* ==========================================
+/*=========================================
 THE BOMBAY LIP CO.
 script.js
-========================================== */
+=========================================*/
 
-/* ==========================
+/*=========================
 PRELOADER
-========================== */
+=========================*/
 
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
 
-    const preloader = document.getElementById("preloader");
+const preloader = document.getElementById("preloader");
 
-    preloader.style.opacity = "0";
+preloader.style.opacity = "0";
 
-    setTimeout(() => {
+setTimeout(() => {
 
-        preloader.style.display = "none";
+preloader.style.display = "none";
 
-    }, 500);
+},500);
 
 });
 
 
-/* ==========================
+/*=========================
 MOBILE MENU
-========================== */
+=========================*/
 
-const menuBtn = document.getElementById("menu-btn");
+const menuBtn=document.getElementById("menu-btn");
 
-const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenu=document.getElementById("mobile-menu");
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click",()=>{
 
-    mobileMenu.classList.toggle("active");
+menuBtn.classList.toggle("active");
 
-    menuBtn.classList.toggle("active");
-
-});
-
-
-/* Close menu when a link is clicked */
-
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        mobileMenu.classList.remove("active");
-
-        menuBtn.classList.remove("active");
-
-    });
+mobileMenu.classList.toggle("active");
 
 });
 
 
-/* ==========================
-HEADER ON SCROLL
-========================== */
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
 
-const header = document.getElementById("header");
+link.addEventListener("click",()=>{
 
-window.addEventListener("scroll", () => {
+mobileMenu.classList.remove("active");
 
-    if (window.scrollY > 80) {
+menuBtn.classList.remove("active");
 
-        header.style.background = "rgba(255,255,255,.98)";
-        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.08)";
-
-    } else {
-
-        header.style.background = "rgba(255,255,255,.94)";
-        header.style.boxShadow = "none";
-
-    }
+});
 
 });
 
 
-/* ==========================
+/*=========================
+HEADER
+=========================*/
+
+const header=document.getElementById("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>60){
+
+header.style.background="rgba(255,255,255,.98)";
+
+header.style.boxShadow="0 12px 35px rgba(0,0,0,.08)";
+
+}
+
+else{
+
+header.style.background="rgba(255,255,255,.88)";
+
+header.style.boxShadow="none";
+
+}
+
+});
+
+
+/*=========================
 SCROLL REVEAL
-========================== */
+=========================*/
 
-const revealItems = document.querySelectorAll(
+const observer=new IntersectionObserver((entries)=>{
 
-".product-card, .feature, .why-card, .testimonial, .faq-item, .founder-grid, .instagram-grid img"
+entries.forEach(entry=>{
 
-);
+if(entry.isIntersecting){
 
-const reveal = () => {
+entry.target.classList.add("show");
 
-    revealItems.forEach(item => {
-
-        const top = item.getBoundingClientRect().top;
-
-        if (top < window.innerHeight - 100) {
-
-            item.classList.add("show");
-
-        }
-
-    });
-
-};
-
-window.addEventListener("scroll", reveal);
-
-reveal();
-
-
-/* ==========================
-ACTIVE NAVIGATION
-========================== */
-
-const sections = document.querySelectorAll("section");
-
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 120;
-
-        if (scrollY >= sectionTop) {
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
+}
 
 });
 
+},
 
-/* ==========================
-FAQ ACCORDION
-(Optional)
-========================== */
+{
 
-document.querySelectorAll(".faq-item").forEach(item => {
-
-    item.addEventListener("click", () => {
-
-        item.classList.toggle("open");
-
-    });
+threshold:.15
 
 });
 
+document.querySelectorAll(
 
-/* ==========================
+".card,.feature-box,.why-card,.testimonial,.faq-item"
+
+).forEach(el=>observer.observe(el));
+
+
+/*=========================
 SMOOTH SCROLL
-========================== */
+=========================*/
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-    anchor.addEventListener("click", function (e) {
+anchor.addEventListener("click",function(e){
 
-        e.preventDefault();
+e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute("href"));
+const target=document.querySelector(this.getAttribute("href"));
 
-        if (target) {
+if(target){
 
-            target.scrollIntoView({
+target.scrollIntoView({
 
-                behavior: "smooth"
+behavior:"smooth",
 
-            });
+block:"start"
 
-        }
+});
 
-    });
+}
+
+});
 
 });
 
 
-/* ==========================
-CONSOLE MESSAGE
-========================== */
+/*=========================
+ACTIVE NAV
+=========================*/
 
-console.log("✨ The Bombay Lip Co. website loaded successfully.");
+const sections=document.querySelectorAll("section[id]");
+
+const navLinks=document.querySelectorAll("nav a");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+sections.forEach(section=>{
+
+const top=section.offsetTop-140;
+
+const height=section.offsetHeight;
+
+if(scrollY>=top&&scrollY<top+height){
+
+current=section.getAttribute("id");
+
+}
+
+});
+
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href")==="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+
+/*=========================
+BACK TO TOP
+=========================*/
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.style.opacity="1";
+
+topBtn.style.pointerEvents="auto";
+
+}
+
+else{
+
+topBtn.style.opacity="0";
+
+topBtn.style.pointerEvents="none";
+
+}
+
+});
+
+topBtn.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+
+/*=========================
+CONSOLE
+=========================*/
+
+console.log("✨ The Bombay Lip Co. Loaded");
