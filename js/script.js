@@ -223,4 +223,101 @@ behavior:"smooth"
 CONSOLE
 =========================*/
 
-console.log("✨ The Bombay Lip Co. Loaded");
+console.log("✨ The Bombay Lip Co. Loaded");/*=========================
+WHATSAPP BUTTON ACTIONS
+=========================*/
+
+const whatsappNumber = "919820002657";
+
+function openWhatsApp(message){
+
+const url =
+`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+window.open(url,"_blank");
+
+}
+
+/* Hero Buttons */
+
+document.querySelector('.hero .btn').onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I'd like to explore your collection.");
+
+};
+
+document.querySelector('.hero .btn-outline').onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I'd like to create my own customised lipstick.");
+
+};
+
+/* Product Cards */
+
+const productButtons=document.querySelectorAll(".card-content a");
+
+productButtons[0].onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I'm interested in your Handmade Lip Balms.");
+
+};
+
+productButtons[1].onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I'd like to know more about your Luxury Lip Scrubs.");
+
+};
+
+productButtons[2].onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I'd like to customise my own lipstick.");
+
+};
+
+/* Founder */
+
+document.querySelector(".founder .btn").onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I'd like to connect with The Bombay Lip Co.");
+
+};
+
+/* Contact Buttons */
+
+const contactButtons=document.querySelectorAll(".contact-buttons a");
+
+contactButtons[0].onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I'd like to enquire about your products.");
+
+};
+
+contactButtons[1].onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I'd like to get in touch with The Bombay Lip Co.");
+
+};
+
+contactButtons[2].onclick=(e)=>{
+
+e.preventDefault();
+
+openWhatsApp("Hi! I found you through your website and would love to know more.");
+
+};
